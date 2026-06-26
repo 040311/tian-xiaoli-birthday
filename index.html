@@ -272,6 +272,20 @@
       font-weight: 900;
     }
 
+    .btn--music.is-playing {
+      border-color: rgba(111, 240, 216, .62);
+      color: #071519;
+      background:
+        linear-gradient(135deg, rgba(255, 240, 188, .96), rgba(111, 240, 216, .9));
+      box-shadow:
+        0 24px 72px rgba(111, 240, 216, .16),
+        inset 0 1px 0 rgba(255, 255, 255, .58);
+    }
+
+    .btn--music.is-playing .btn__mark {
+      background: rgba(7, 21, 25, .12);
+    }
+
     .btn__mark {
       width: 22px;
       height: 22px;
@@ -510,6 +524,11 @@
       color: rgba(255, 249, 235, .67);
       font-size: clamp(15px, 1.6vw, 18px);
       line-height: 1.85;
+    }
+
+    .title-row--compact {
+      display: block;
+      max-width: 860px;
     }
 
     .wishes {
@@ -1536,6 +1555,7 @@
           <p class="hero__copy">愿这一岁的你，被鲜花、星光、热烈的爱和恰到好处的幸运簇拥。今天不只是一个日期，它是世界认真为你调亮灯光的一晚。</p>
           <div class="hero__actions">
             <button class="btn btn--primary" type="button" id="igniteBtn"><span class="btn__mark">✦</span>开启生日仪式</button>
+            <button class="btn btn--music" type="button" id="musicBtn" aria-pressed="false"><span class="btn__mark" id="musicMark">乐</span><span id="musicText">播放生日 BGM</span></button>
             <a class="btn" href="#wishlab"><span class="btn__mark">愿</span>点亮生日愿望</a>
           </div>
           <div class="hero__metrics" aria-label="生日祝福摘要">
@@ -1643,12 +1663,11 @@
 
     <section class="band band--quiet" id="compose" aria-labelledby="compose-title">
       <div class="band__inner">
-        <div class="title-row reveal">
+        <div class="title-row title-row--compact reveal">
           <div>
             <p class="section-label">Personal blessing</p>
             <h2 id="compose-title">把最后一句祝福，写成只属于她的版本。</h2>
           </div>
-          <p>可以直接生成一张祝福卡，保存成图片或复制给朋友。分享页面时，收礼的人也能继续点亮花束和星图。</p>
         </div>
         <div class="composer">
           <form class="panel reveal" id="composerForm">
@@ -1697,6 +1716,11 @@
       </div>
     </section>
   </main>
+  <!-- BGM: "Happy Birthday to You.ogg" by Pracchia-78, public domain on Wikimedia Commons. -->
+  <audio id="birthdayMusic" preload="none" loop>
+    <source src="assets/happy-birthday-bgm.mp3" type="audio/mpeg">
+    <source src="assets/happy-birthday-bgm.ogg" type="audio/ogg">
+  </audio>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <script>
@@ -1704,6 +1728,10 @@
       const canvas = document.getElementById("stage");
       const ctx = canvas.getContext("2d");
       const toast = document.getElementById("toast");
+      const birthdayMusic = document.getElementById("birthdayMusic");
+      const musicBtn = document.getElementById("musicBtn");
+      const musicText = document.getElementById("musicText");
+      const musicMark = document.getElementById("musicMark");
       const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       const isCoarse = window.matchMedia("(pointer: coarse)").matches;
       let width = 0;
@@ -1875,9 +1903,51 @@
         }
       }
 
+      function setMusicState(isPlaying) {
+        musicBtn.classList.toggle("is-playing", isPlaying);
+        musicBtn.setAttribute("aria-pressed", String(isPlaying));
+        musicText.textContent = isPlaying ? "暂停生日 BGM" : "播放生日 BGM";
+        musicMark.textContent = isPlaying ? "停" : "乐";
+      }
+
+      async function playBirthdayMusic({ silent = false } = {}) {
+        try {
+          birthdayMusic.volume = .46;
+          await birthdayMusic.play();
+          setMusicState(true);
+          if (!silent) showToast("生日 BGM 已响起。");
+          return true;
+        } catch (error) {
+          setMusicState(false);
+          if (!silent) showToast("点击后才能播放音乐，再试一次就好。");
+          return false;
+        }
+      }
+
+      function pauseBirthdayMusic({ silent = false } = {}) {
+        birthdayMusic.pause();
+        setMusicState(false);
+        if (!silent) showToast("生日 BGM 已暂停。");
+      }
+
+      function initMusic() {
+        birthdayMusic.volume = .46;
+        birthdayMusic.addEventListener("play", () => setMusicState(true));
+        birthdayMusic.addEventListener("pause", () => setMusicState(false));
+        birthdayMusic.addEventListener("ended", () => setMusicState(false));
+        musicBtn.addEventListener("click", () => {
+          if (birthdayMusic.paused) {
+            playBirthdayMusic();
+          } else {
+            pauseBirthdayMusic();
+          }
+        });
+      }
+
       function celebrate(origin) {
         document.body.classList.add("is-lit");
         playChime();
+        playBirthdayMusic({ silent: true });
         const x = origin?.clientX || width * .5;
         const y = origin?.clientY || height * .36;
         addSpark(x, y, 42, 1.45);
@@ -2142,6 +2212,7 @@
       initNav();
       initWishLab();
       initComposer();
+      initMusic();
       initPointerMagic();
       animate();
 
