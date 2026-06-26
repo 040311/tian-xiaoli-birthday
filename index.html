@@ -1522,8 +1522,6 @@
   <nav class="nav" aria-label="生日页面导航">
     <a href="#opening">开场</a>
     <a href="#wishes">祝福</a>
-    <a href="#bouquet">花束</a>
-    <a href="#stars">星图</a>
     <a href="#letter">信笺</a>
     <a href="#wishlab">愿望</a>
     <a href="#compose">卡片</a>
@@ -1538,7 +1536,7 @@
           <p class="hero__copy">愿这一岁的你，被鲜花、星光、热烈的爱和恰到好处的幸运簇拥。今天不只是一个日期，它是世界认真为你调亮灯光的一晚。</p>
           <div class="hero__actions">
             <button class="btn btn--primary" type="button" id="igniteBtn"><span class="btn__mark">✦</span>开启生日仪式</button>
-            <a class="btn" href="#bouquet"><span class="btn__mark">花</span>定制一束祝福</a>
+            <a class="btn" href="#wishlab"><span class="btn__mark">?</span>??????</a>
           </div>
           <div class="hero__metrics" aria-label="生日祝福摘要">
             <div class="metric"><strong>01</strong><span>今晚的主角</span></div>
@@ -1610,117 +1608,6 @@
       </div>
     </section>
 
-    <section class="band band--quiet" id="bouquet" aria-labelledby="bouquet-title">
-      <div class="band__inner salon">
-        <div class="bouquet-stage reveal" aria-hidden="true">
-          <svg class="bouquet-svg" viewBox="0 0 520 560" role="img" aria-label="生日花束">
-            <defs>
-              <linearGradient id="stem" x1="0" x2="1">
-                <stop offset="0" stop-color="#5bbd9b"></stop>
-                <stop offset="1" stop-color="#2f7f6d"></stop>
-              </linearGradient>
-              <radialGradient id="rose" cx=".38" cy=".34" r=".72">
-                <stop offset="0" stop-color="#fff2d2"></stop>
-                <stop offset=".45" stop-color="#ff7a9a"></stop>
-                <stop offset="1" stop-color="#9c1b45"></stop>
-              </radialGradient>
-              <radialGradient id="sun" cx=".42" cy=".36" r=".7">
-                <stop offset="0" stop-color="#fff5b7"></stop>
-                <stop offset=".5" stop-color="#ffd36c"></stop>
-                <stop offset="1" stop-color="#ff8c62"></stop>
-              </radialGradient>
-              <radialGradient id="mintFlower" cx=".4" cy=".34" r=".7">
-                <stop offset="0" stop-color="#ffffff"></stop>
-                <stop offset=".5" stop-color="#6ff0d8"></stop>
-                <stop offset="1" stop-color="#2d8b94"></stop>
-              </radialGradient>
-            </defs>
-            <path d="M248 170 C242 260 224 370 190 520" stroke="url(#stem)" stroke-width="7" fill="none"></path>
-            <path d="M284 178 C282 276 296 386 334 520" stroke="url(#stem)" stroke-width="7" fill="none"></path>
-            <path d="M210 230 C234 300 240 390 238 522" stroke="url(#stem)" stroke-width="6" fill="none"></path>
-            <path d="M330 238 C302 318 284 408 278 522" stroke="url(#stem)" stroke-width="6" fill="none"></path>
-            <path d="M176 292 C230 324 280 330 354 296" stroke="rgba(111,240,216,.42)" stroke-width="4" fill="none"></path>
-            <g class="flower-head" data-flower="rose">
-              <circle cx="246" cy="160" r="58" fill="url(#rose)"></circle>
-              <path d="M210 162 C228 126 270 124 288 160 C270 192 228 198 210 162Z" fill="rgba(255,255,255,.2)"></path>
-              <path d="M232 137 C256 156 260 176 240 196" stroke="rgba(255,255,255,.35)" stroke-width="3" fill="none"></path>
-            </g>
-            <g class="flower-head" data-flower="lily">
-              <circle cx="326" cy="202" r="47" fill="url(#mintFlower)"></circle>
-              <path d="M326 156 C342 186 362 194 344 224 C324 204 302 210 306 178Z" fill="rgba(255,255,255,.28)"></path>
-              <path d="M302 203 C326 190 348 194 365 216" stroke="rgba(255,255,255,.42)" stroke-width="3" fill="none"></path>
-            </g>
-            <g class="flower-head" data-flower="sun">
-              <circle cx="188" cy="245" r="50" fill="url(#sun)"></circle>
-              <circle cx="188" cy="245" r="18" fill="#603018"></circle>
-              <path d="M188 180 L199 218 L238 210 L208 236 L238 263 L199 259 L188 298 L176 259 L138 263 L167 236 L138 210 L176 218Z" fill="rgba(255,211,108,.42)"></path>
-            </g>
-            <g class="flower-head" data-flower="magnolia">
-              <circle cx="344" cy="292" r="44" fill="rgba(255,240,188,.85)"></circle>
-              <path d="M344 246 C366 270 372 300 344 336 C318 300 320 270 344 246Z" fill="rgba(255,83,125,.32)"></path>
-              <path d="M306 286 C332 276 354 284 378 306" stroke="rgba(129,24,56,.32)" stroke-width="3" fill="none"></path>
-            </g>
-            <g class="flower-head" data-flower="star">
-              <circle cx="260" cy="278" r="40" fill="rgba(105,183,255,.86)"></circle>
-              <path d="M260 232 L272 266 L308 266 L279 286 L290 320 L260 299 L230 320 L241 286 L212 266 L248 266Z" fill="rgba(255,255,255,.38)"></path>
-            </g>
-            <g class="flower-head" data-flower="baby">
-              <circle cx="162" cy="332" r="16" fill="#fff9eb"></circle>
-              <circle cx="196" cy="350" r="14" fill="#fff9eb"></circle>
-              <circle cx="226" cy="328" r="13" fill="#fff9eb"></circle>
-              <circle cx="302" cy="350" r="13" fill="#fff9eb"></circle>
-              <circle cx="372" cy="348" r="15" fill="#fff9eb"></circle>
-            </g>
-            <path d="M176 420 C210 455 306 456 352 418 L332 534 L202 534Z" fill="rgba(129,24,56,.74)"></path>
-            <path d="M184 430 C230 452 294 452 342 430" stroke="rgba(255,240,188,.5)" stroke-width="4" fill="none"></path>
-          </svg>
-          <div class="ribbon-note">
-            <strong id="bouquetTitle">田小莉的生日花束</strong>
-            <p id="bouquetCopy">选择几种花，生成一束专属祝福。每点亮一朵，页面都会落下一点花瓣。</p>
-          </div>
-        </div>
-        <div class="salon-copy reveal">
-          <p class="section-label">Birthday bouquet</p>
-          <h2 id="bouquet-title">亲手为她配一束会发光的花。</h2>
-          <p>每一种花都有一层祝愿：漂亮、自由、热爱、平安、好运和长久的快乐。点选花名，花束会被点亮，祝福也会随之变化。</p>
-          <div class="flower-chips" aria-label="选择生日花束">
-            <button class="chip" type="button" data-flower="rose" data-word="玫瑰" data-copy="玫瑰代表热烈：愿田小莉一直被坚定、明亮、毫不敷衍的爱包围。">玫瑰</button>
-            <button class="chip" type="button" data-flower="lily" data-word="铃兰" data-copy="铃兰代表清甜：愿你每个清晨都有好消息，每个夜晚都睡得安心。">铃兰</button>
-            <button class="chip" type="button" data-flower="sun" data-word="向日葵" data-copy="向日葵代表能量：愿你做喜欢的事时，永远有不熄灭的光。">向日葵</button>
-            <button class="chip" type="button" data-flower="magnolia" data-word="木兰" data-copy="木兰代表从容：愿你美得坚定，也活得松弛。">木兰</button>
-            <button class="chip" type="button" data-flower="star" data-word="星辰花" data-copy="星辰花代表记忆：愿今天的快乐长久保存，想起来仍然发亮。">星辰花</button>
-            <button class="chip" type="button" data-flower="baby" data-word="满天星" data-copy="满天星代表陪伴：愿许多小小的幸福，密密地落在你生活里。">满天星</button>
-          </div>
-          <div class="wish-actions">
-            <button class="btn btn--primary" type="button" id="completeBouquet"><span class="btn__mark">束</span>完成花束</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="band" id="stars" aria-labelledby="star-title">
-      <div class="band__inner constellation">
-        <div class="star-map reveal">
-          <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-            <path class="star-line" d="M18 25 L42 18 L71 30 L83 55 L56 74 L31 61 L18 25"></path>
-            <path class="star-line" d="M42 18 L56 74 M71 30 L31 61"></path>
-          </svg>
-          <button class="star-button is-active" type="button" style="--x:18%;--y:25%" data-title="鲜花" data-copy="愿你收到的不止生日花束，还有生活一整年的芬芳。"></button>
-          <button class="star-button" type="button" style="--x:42%;--y:18%" data-title="自由" data-copy="愿你拥有说走就走的勇气，也拥有慢慢享受的从容。"></button>
-          <button class="star-button" type="button" style="--x:71%;--y:30%" data-title="热爱" data-copy="愿你做喜欢的事时，眼睛里总有明亮的光。"></button>
-          <button class="star-button" type="button" style="--x:83%;--y:55%" data-title="好运" data-copy="愿幸运不是偶尔路过，而是常常坐在你身边。"></button>
-          <button class="star-button" type="button" style="--x:56%;--y:74%" data-title="平安" data-copy="愿所有奔赴都有稳稳的归处，所有疲惫都能被好好安放。"></button>
-          <button class="star-button" type="button" style="--x:31%;--y:61%" data-title="快乐" data-copy="愿你今天快乐，明天快乐，很多很多天都快乐。"></button>
-        </div>
-        <div class="star-note reveal">
-          <p class="overline">A star just for her</p>
-          <h2 id="star-title">田小莉的生日星图</h2>
-          <h3 id="starHeading">鲜花</h3>
-          <p id="starCopy">愿你收到的不止生日花束，还有生活一整年的芬芳。</p>
-        </div>
-      </div>
-    </section>
-
     <section class="band letter" id="letter" aria-labelledby="letter-title">
       <div class="band__inner">
         <div class="seal" aria-hidden="true"><span>莉</span></div>
@@ -1730,32 +1617,6 @@
           <p>愿你在新的一岁里，继续拥有自己的节奏。可以勇敢，也可以撒娇；可以坚定向前，也可以偶尔停下来抱抱自己。你值得很大的快乐，也值得很细致的温柔。</p>
           <p>愿所有美好的事物都记得你的名字，愿你喜欢的风景不断向你靠近。愿你每一次认真生活，都能得到生活认真回应；愿你每一次抬头，都能看见属于自己的光。</p>
           <p>如果今天的愿望可以多许几个，那就把漂亮、健康、顺利、被爱、自由和长久的快乐都写进去。新的一岁，请继续闪闪发光。</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="band band--quiet" aria-labelledby="capsule-title">
-      <div class="band__inner">
-        <div class="title-row reveal">
-          <div>
-            <p class="section-label">Twelve tiny futures</p>
-            <h2 id="capsule-title">把未来十二个月，提前放进好运时间胶囊。</h2>
-          </div>
-          <p>每一格都存着一个小小的祝愿。它们不喧哗，但会在需要的时候，轻轻把快乐递到田小莉手里。</p>
-        </div>
-        <div class="capsule-grid">
-          <button class="capsule reveal" type="button" data-note="一月愿你有新的开始，也有旧日温柔继续陪伴。"><strong>一月</strong><p>新的计划慢慢展开，心里有光，脚下有路。</p></button>
-          <button class="capsule reveal" type="button" data-note="二月愿你被爱意包围，连风都替你说好话。"><strong>二月</strong><p>热茶、花香、好消息，都靠近你。</p></button>
-          <button class="capsule reveal" type="button" data-note="三月愿你漂亮地生长，像春天一样无法被忽略。"><strong>三月</strong><p>万物醒来，你也越来越明亮。</p></button>
-          <button class="capsule reveal" type="button" data-note="四月愿你每一次努力，都被认真看见。"><strong>四月</strong><p>认真做的事，会在某天给你惊喜。</p></button>
-          <button class="capsule reveal" type="button" data-note="五月愿你有说走就走的自由，也有被等候的归处。"><strong>五月</strong><p>去看风景，也成为别人的风景。</p></button>
-          <button class="capsule reveal" type="button" data-note="六月愿你生日快乐，今天和往后都要被珍惜。"><strong>六月</strong><p>这一页的星光，专门为你亮起。</p></button>
-          <button class="capsule reveal" type="button" data-note="七月愿热烈不烫伤你，只照亮你。"><strong>七月</strong><p>热爱继续，快乐也继续。</p></button>
-          <button class="capsule reveal" type="button" data-note="八月愿你在盛夏里，仍然拥有清凉的心。"><strong>八月</strong><p>从容、清醒、漂亮地向前。</p></button>
-          <button class="capsule reveal" type="button" data-note="九月愿新的答案出现，刚好是你喜欢的样子。"><strong>九月</strong><p>答案慢慢清楚，愿望慢慢靠岸。</p></button>
-          <button class="capsule reveal" type="button" data-note="十月愿你收获很多，也轻松很多。"><strong>十月</strong><p>努力有回响，好运有形状。</p></button>
-          <button class="capsule reveal" type="button" data-note="十一月愿你被温暖拥抱，也被生活奖励。"><strong>十一月</strong><p>微光很多，温柔很多。</p></button>
-          <button class="capsule reveal" type="button" data-note="十二月愿你回头看时，会喜欢这一整年的自己。"><strong>十二月</strong><p>岁末回望，都是值得微笑的故事。</p></button>
         </div>
       </div>
     </section>
@@ -2080,64 +1941,6 @@
         targets.forEach((target) => observer.observe(target));
       }
 
-      function initStars() {
-        const buttons = [...document.querySelectorAll(".star-button")];
-        const heading = document.getElementById("starHeading");
-        const copy = document.getElementById("starCopy");
-        buttons.forEach((button) => {
-          button.addEventListener("click", () => {
-            buttons.forEach((item) => item.classList.remove("is-active"));
-            button.classList.add("is-active");
-            heading.textContent = button.dataset.title;
-            copy.textContent = button.dataset.copy;
-            const rect = button.getBoundingClientRect();
-            addSpark(rect.left + rect.width / 2, rect.top + rect.height / 2, 30, .88);
-          });
-        });
-      }
-
-      function initBouquet() {
-        const chips = [...document.querySelectorAll(".chip")];
-        const heads = [...document.querySelectorAll(".flower-head")];
-        const title = document.getElementById("bouquetTitle");
-        const copy = document.getElementById("bouquetCopy");
-        const finish = document.getElementById("completeBouquet");
-
-        chips.forEach((chip) => {
-          chip.addEventListener("click", () => {
-            const flower = chip.dataset.flower;
-            if (pickedFlowers.has(flower)) {
-              pickedFlowers.delete(flower);
-              chip.classList.remove("is-picked");
-            } else {
-              pickedFlowers.add(flower);
-              chip.classList.add("is-picked");
-            }
-            heads.forEach((head) => head.classList.toggle("is-picked", pickedFlowers.has(head.dataset.flower)));
-            const rect = chip.getBoundingClientRect();
-            dropPetals(rect.left + rect.width / 2, rect.top + rect.height / 2, 12);
-            addSpark(rect.left + rect.width / 2, rect.top + rect.height / 2, 16, .55);
-
-            if (pickedFlowers.size === 0) {
-              title.textContent = "田小莉的生日花束";
-              copy.textContent = "选择几种花，生成一束专属祝福。每点亮一朵，页面都会落下一点花瓣。";
-            } else {
-              const names = chips.filter((item) => pickedFlowers.has(item.dataset.flower)).map((item) => item.dataset.word);
-              title.textContent = `${names.join("、")}，送给田小莉`;
-              copy.textContent = chip.dataset.copy;
-            }
-          });
-        });
-
-        finish.addEventListener("click", (event) => {
-          if (pickedFlowers.size === 0) {
-            chips.slice(0, 3).forEach((chip) => chip.click());
-          }
-          celebrate(event);
-          showToast("花束已经完成，愿田小莉被这一整束好运包围。");
-        });
-      }
-
       function initWishLab() {
         const items = [...document.querySelectorAll(".wish-item")];
         const orb = document.getElementById("wishOrb");
@@ -2337,8 +2140,6 @@
       resize();
       initReveals();
       initNav();
-      initStars();
-      initBouquet();
       initWishLab();
       initComposer();
       initPointerMagic();
